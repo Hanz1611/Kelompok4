@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel Kesehatan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Link untuk animasi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Kalkulator Kesehatan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calculator.html">Kalkulator</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="artikel.html">Artikel</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Artikel Kesehatan</h1>
+            <p class="lead">Dapatkan informasi menarik seputar kesehatan dan gaya hidup sehat.</p>
+        </div>
+    </header>
+
+    <!-- Artikel Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row" id="article-cards">
+                <!-- Artikel akan dimuat di sini oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="mb-0">&copy; 2024 Kalkulator Kesehatan. Dibuat dengan ❤️ untuk kesehatan Anda.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const articles = [
+                { title: "Manfaat Olahraga untuk Kesehatan Mental", image: "images/1.jpg", summary: "Olahraga tidak hanya bermanfaat bagi tubuh, tetapi juga sangat penting untuk kesehatan mental, meningkatkan suasana hati, dan mengurangi stres.", link: "https://www.biofarma.co.id/id/announcement/detail/manfaat-olahraga-bagi-kesehatan-mental#:~:text=Melansir%20dari%20Mental%20Health%20Foundation,sehingga%20suasana%20hati%20menjadi%20meningkat." },
+                { title: "Pentingnya Nutrisi Seimbang", image: "images/2.jpg", summary: "Mengonsumsi makanan bergizi seimbang adalah kunci untuk menjaga kesehatan tubuh dan mental, serta mendukung gaya hidup sehat.", link: "https://krakataumedika.com/info-media/artikel/pentingnya-gizi-seimbang-bagi-kesehatan" },
+                { title: "Tips Minum Air yang Cukup", image: "images/3.jpg", summary: "Air putih adalah elemen penting untuk menjaga tubuh tetap terhidrasi dan berfungsi dengan optimal. Ini adalah cara terbaik untuk menjaga kesehatan tubuh.", link: "https://www.siloamhospitals.com/informasi-siloam/artikel/minum-air-putih-sehari-berapa-liter" },
+                { title: "Efek Positif Tidur Cukup pada Tubuh", image: "images/4.jpg", summary: "Tidur yang cukup memiliki banyak manfaat bagi tubuh, termasuk memperbaiki mood, meningkatkan konsentrasi, dan memulihkan energi.", link: "https://telemed.ihc.id/artikel-detail-948-apa-manfaat-tidur-untuk-kesehatan.html#:~:text=Selain%20manfaat%20langsung%20pada%20sistem,sehari%2Dhari%20dengan%20lebih%20baik." },
+                { title: "Panduan Olahraga untuk Pemula", image: "images/5.jpg", summary: "Olahraga sangat penting untuk kesehatan, dan pemula perlu mengetahui dasar-dasar olahraga yang aman dan efektif untuk dilakukan.", link: "https://www.cdc.gov/physicalactivity/basics/index.html" },
+                { title: "Manfaat Serat untuk Pencernaan", image: "images/6.jpg", summary: "Serat memiliki banyak manfaat bagi kesehatan pencernaan, termasuk melancarkan buang air besar dan mengurangi risiko gangguan pencernaan.", link: "https://telemed.ihc.id/artikel-detail-1024-Manfaat-Makanan-Berserat-Untuk-Kesehatan-Pencernaan.html" },
+                { title: "Mengelola Stres dengan Efektif", image: "images/7.jpg", summary: "Stres adalah bagian dari kehidupan, tetapi kita bisa mengelolanya dengan cara yang sehat untuk menjaga kesehatan fisik dan mental.", link: "https://prodia.co.id/id/artikel-detail/9-cara-mengatasi-stres-secara-efektif" },
+                { title: "Pentingnya Sarapan untuk Energi", image: "images/8.jpg", summary: "Sarapan adalah makanan terpenting yang memberikan energi untuk memulai hari, meningkatkan konsentrasi dan daya tahan tubuh.", link: "https://www.siloamhospitals.com/informasi-siloam/artikel/manfaat-sarapan-pagi" },
+                { title: "Mengurangi Konsumsi Gula Berlebih", image: "images/9.jpg", summary: "Gula berlebih dapat menyebabkan berbagai masalah kesehatan, termasuk obesitas dan diabetes. Mengurangi konsumsi gula sangat penting untuk kesehatan.", link: "https://hellosehat.com/nutrisi/tips-makan-sehat/cara-mengurangi-konsumsi-gula/" },
+                { title: "Keuntungan Jalan Kaki Setiap Hari", image: "images/10.jpg", summary: "Jalan kaki adalah olahraga ringan yang memiliki banyak manfaat, mulai dari meningkatkan sirkulasi darah hingga menjaga kebugaran tubuh.", link: "https://www.siloamhospitals.com/informasi-siloam/artikel/manfaat-jalan-kaki" },
+                { title: "Cara Meningkatkan Sistem Imun", image: "images/11.jpg", summary: "Meningkatkan sistem imun tubuh sangat penting untuk melawan penyakit dan menjaga kesehatan. Cara-cara alami seperti tidur cukup dan makan makanan bergizi bisa membantu.", link: "https://www.siloamhospitals.com/informasi-siloam/artikel/cara-meningkatkan-imun-tubuh" },
+                { title: "Manfaat Yoga untuk Relaksasi", image: "images/12.jpg", summary: "Yoga adalah aktivitas yang sangat efektif untuk relaksasi, mengurangi stres, dan meningkatkan fleksibilitas tubuh.", link: "https://www.klikdokter.com/psikologi/kesehatan-mental/manfaat-yoga-untuk-kesehatan-mental" },
+                { title: "Pentingnya Vitamin D untuk Tubuh", image: "images/13.jpg", summary: "Vitamin D berperan penting dalam menjaga kesehatan tulang dan sistem kekebalan tubuh. Pastikan Anda cukup mendapatkan vitamin D dari sinar matahari dan makanan.", link: "https://www.siloamhospitals.com/informasi-siloam/artikel/ketahui-berbagai-manfaat-vitamin-d-dan-pentingnya-untuk-kesehatan-tubuh" },
+                { title: "Mengelola Berat Badan dengan Sehat", image: "images/14.jpg", summary: "Mengelola berat badan adalah bagian penting dari gaya hidup sehat. Pilih pola makan seimbang dan olahraga teratur untuk hasil yang optimal.", link: "https://www.siloamhospitals.com/informasi-siloam/artikel/diet-menambah-berat-badan" },
+                { title: "Cara Menghindari Dehidrasi", image: "images/15.jpg", summary: "Dehidrasi bisa mempengaruhi fungsi tubuh secara keseluruhan. Pastikan Anda minum cukup air sepanjang hari untuk menjaga tubuh tetap terhidrasi.", link: "https://www.naturalfarm.id/blog/cara-mengatasi-dehidrasi" },
+                { title: "Manfaat Latihan Kardio untuk Jantung", image: "images/16.jpg", summary: "Latihan kardio sangat baik untuk kesehatan jantung, membantu meningkatkan sirkulasi darah dan menurunkan risiko penyakit jantung.", link: "https://www.siloamhospitals.com/informasi-siloam/artikel/apa-itu-olahraga-kardio" },
+                { title: "Efek Negatif Duduk Terlalu Lama", image: "images/17.jpg", summary: "Duduk terlalu lama dapat berisiko menyebabkan masalah kesehatan, seperti obesitas dan penyakit jantung. Cobalah untuk rutin bergerak setiap jam.", link: "https://www.siloamhospitals.com/informasi-siloam/artikel/gangguan-kesehatan-akibat-duduk-terlalu-lama" },
+                { title: "Menjaga Kesehatan Mental dengan Meditasi", image: "images/18.jpg", summary: "Meditasi adalah cara yang efektif untuk menjaga kesehatan mental, mengurangi stres, dan meningkatkan konsentrasi.", link: "https://www.siloamhospitals.com/informasi-siloam/artikel/manfaat-meditasi-untuk-kesehatan" },
+                { title: "Panduan Diet Sehat untuk Pemula", image: "images/19.jpg", summary: "Diet sehat dapat membantu menurunkan berat badan dan meningkatkan kualitas hidup. Fokus pada makanan bergizi dan olahraga teratur.", link: "https://www.siloamhospitals.com/informasi-siloam/artikel/diet-untuk-menurunkan-berat-badan" },
+                { title: "Meningkatkan Konsumsi Sayuran Harian", image: "images/20.jpg", summary: "Sayuran kaya akan vitamin, mineral, dan serat yang sangat dibutuhkan tubuh. Pastikan untuk meningkatkan konsumsi sayuran setiap hari.", link: "https://yankes.kemkes.go.id/view_artikel/2192/pentingnya-konsumsi-sayur-dan-buah" }
+            ];
+
+            const articleContainer = document.getElementById("article-cards");
+
+            articles.forEach(article => {
+                const articleCard = document.createElement("div");
+                articleCard.classList.add("col-md-4", "article-card");
+                articleCard.innerHTML = `
+                    <div class="card shadow-sm animate__animated animate__fadeInUp">
+                        <img src="${article.image}" class="card-img-top" alt="${article.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${article.title}</h5>
+                            <p class="card-text">${article.summary}</p>
+                            <a href="${article.link}" class="btn btn-primary" target="_blank">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                `;
+                articleContainer.appendChild(articleCard);
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

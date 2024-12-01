@@ -1,0 +1,129 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    background: #222;
+    color: white;
+    font-size: 0.9rem;
+}
+
+form {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navbar styling */
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: #007bff;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Sticky navbar shadow */
+.navbar.sticky-top {
+    animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Card styling */
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+/* Animasi fade-in untuk artikel */
+.article-card {
+    margin-bottom: 30px; /* Jarak antar artikel */
+}
+
+/* Mengatur jarak antara gambar dan konten */
+.card-img-top {
+    margin-bottom: 15px; /* Memberi jarak antara gambar dan teks */
+}
+
+/* Memberikan padding pada teks untuk spasi yang lebih baik */
+.card-body {
+    padding: 20px;
+    text-align: center; /* Meratakan teks secara horizontal */
+}
+
+/* Menambahkan jarak pada deskripsi artikel */
+.card-text {
+    margin-bottom: 20px;
+}
+
+/* Animasi tambahan */
+.animate__fadeInUp {
+    animation-duration: 1s;
+}
+
+/* Hover effect on card */
+.card:hover {
+    transform: translateY(-5px); /* Mengangkat card sedikit */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Membuat card lebih rapi */
+.card {
+    border: none;
+}
